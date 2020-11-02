@@ -43,5 +43,5 @@ public class Properties {
 	public String toString() {
 		return "Properties [category=" + category + "]";
 	}
-	
+
 }

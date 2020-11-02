@@ -43,6 +43,5 @@ public class Context {
 	public String toString() {
 		return "Context [text=" + text + "]";
 	}
-	
-	
+
 }

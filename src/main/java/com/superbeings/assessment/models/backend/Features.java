@@ -6,28 +6,35 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Features {
-	
+
 	private Properties properties;
 	private String text;
 	private List<Context> context;
+
 	public Properties getProperties() {
 		return properties;
 	}
+
 	public void setProperties(Properties properties) {
 		this.properties = properties;
 	}
+
 	public String getText() {
 		return text;
 	}
+
 	public void setText(String text) {
 		this.text = text;
 	}
+
 	public List<Context> getContext() {
 		return context;
 	}
+
 	public void setContext(List<Context> context) {
 		this.context = context;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -37,6 +44,7 @@ public class Features {
 		result = prime * result + ((text == null) ? 0 : text.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -63,10 +71,10 @@ public class Features {
 			return false;
 		return true;
 	}
+
 	@Override
 	public String toString() {
 		return "Features [properties=" + properties + ", text=" + text + ", context=" + context + "]";
-	} 
-	
-	
+	}
+
 }

@@ -6,22 +6,26 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MapBoxResponseModel {
-	
+
 	private String type;
 	private List<Features> features;
-	
+
 	public String getType() {
 		return type;
 	}
+
 	public void setType(String type) {
 		this.type = type;
 	}
+
 	public List<Features> getFeatures() {
 		return features;
 	}
+
 	public void setFeatures(List<Features> features) {
 		this.features = features;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -30,6 +34,7 @@ public class MapBoxResponseModel {
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -51,10 +56,10 @@ public class MapBoxResponseModel {
 			return false;
 		return true;
 	}
+
 	@Override
 	public String toString() {
 		return "MapBoxResponseModel [type=" + type + ", features=" + features + "]";
 	}
-	
-	
+
 }
