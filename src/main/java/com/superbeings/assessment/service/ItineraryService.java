@@ -2,6 +2,8 @@ package com.superbeings.assessment.service;
 
 import java.net.URI;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -24,6 +26,7 @@ public class ItineraryService {
 	private static final String ACCESS_TOKEN = "&access_token=";
 	private static final String DEFAULT_QUERY = "history,istanbul";
 	private static final String DEFAULT_COUNTRY = "TR";
+	private static final Logger log = LoggerFactory.getLogger(ItineraryService.class);
 
 	@Autowired
 	private RestTemplate mapboxRestTemplate;
@@ -43,10 +46,13 @@ public class ItineraryService {
 		try {
 			MapBoxResponseModel mapBoxResponseModel = mapboxRestTemplate.getForObject(requestURI,
 					MapBoxResponseModel.class);
+			log.info("Before Transformation: " + mapBoxResponseModel.toString());
 			itinerary = mapBoxResponseTransformer.transform(mapBoxResponseModel);
+			log.info("After Transformation: " + itinerary.toString());
 		} catch (HttpClientErrorException e) {
-			throw new ResponseStatusException(e.getStatusCode(),e.getMessage(), e);
-		} 
+			log.info("Backend Exception Occurred: " + e.toString());
+			throw new ResponseStatusException(e.getStatusCode(), e.getMessage(), e);
+		}
 		return itinerary;
 	}
 
