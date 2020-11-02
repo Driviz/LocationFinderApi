@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.3.5.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.superbeings</groupId>
+	<artifactId>assessment</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>assessment</name>
+	<description>
+		 Assignment ----------
+		 Kunal wants to take a break.
+		 He likes travelling and wants to explore Istanbul this winter. 
+		 Can you help him plan his itinerary? Kunal is interested in historical places - museums, palaces, etc. 
+		 Kindly curate 10 such POIs within Istanbul that Kunal can visit.  
+		 In order to find such POIs, 
+		 please use MapBox's Search API https://docs.mapbox.com/api/search/#geocoding.   
+		 Write an API to provide this list of POIs in JSON. The response format should be:  
+		 GET /itinerary 
+		 [ { 		
+		 		"name": "Topkapi Palace",
+		  		"categories": ["tourism", "museum"],
+		   		"region": "Fatih" 	
+		 } ]
+		 
+	 </description>
+
+	<properties>
+		<java.version>11</java.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
