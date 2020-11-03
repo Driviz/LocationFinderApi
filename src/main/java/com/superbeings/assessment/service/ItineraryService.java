@@ -38,10 +38,13 @@ public class ItineraryService {
 	@Value("${mapbox.basepath}")
 	private String basepath;
 
-	@Value("${limit.max}")
+	@Value("${mapbox.limit.max}")
 	private int limit;
+	
+	@Value("${mapbox.token}")
+	private String token;
 
-	public List<ItineraryItem> getItinerary(String token) throws Exception {
+	public List<ItineraryItem> getItinerary() throws Exception {
 		URI requestURI = createRequestURI(token);
 		List<ItineraryItem> itineraryItemList = null;
 		try {
